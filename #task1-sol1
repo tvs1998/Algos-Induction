@@ -8,6 +8,7 @@ int main()
 	p=(char*)malloc(10000);
 	scanf("%d",&tc);
 	scanf("%d",&k);
+	k=k%26;
 	for(i=0;i<tc;i++)
 	{
 		scanf("%s",p);
