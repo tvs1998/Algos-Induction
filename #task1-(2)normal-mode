@@ -24,6 +24,10 @@ int main()
 			q[m]=p[o];
 			m++;
 			o++;
+			if(o==n)
+			{
+				o=0;
+			}
 			while(o!=j)
 			{
 			 q[m]=p[o];
