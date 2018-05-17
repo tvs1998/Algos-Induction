@@ -1,0 +1,51 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int cf,n,cap,curp,i,j,m,d,k;
+	scanf("%d",&cf);//current floor
+	scanf("%d",&n);//no of floor requests
+	scanf("%d",&cap);//capacity of the lift
+	
+	int a[10000],b[10000],c[10000],p[10000];
+	for(i=0;i<n;i++)//hacker mode
+	{
+		scanf("%d%d%d",&a[i],&b[i],&c[i]);//floor no,no entering the elevator,no leaving elevator
+	}
+	sort(a,a+n);
+	for(i=0;i<n;i++)
+	{
+		if(a[i]==cf)
+		{
+		 j=i;
+	    }
+	}
+	m=0;
+	d=b[j]-c[j];
+	p[m]=a[j];
+	m++;
+	j++;
+	if(j==n)
+	{
+		j=0;
+	}
+	while(d<=cap&&d!=0)
+	{
+	  p[m]=a[j];//to calculate the scheduling
+	  d=d+b[j]-c[j];//d=current population
+	  m++;
+	  j++;
+	  
+	  if(j==n)
+	  {
+	  	j=0;
+	  }
+    }
+    for(k=0;k<m;k++)
+    {
+    	printf("%d ",p[k]);
+	}
+	
+	
+}
