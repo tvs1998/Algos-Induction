@@ -1,0 +1,44 @@
+#include<iostream>
+#include<algorithm>
+using namespace std;
+int main()
+{
+	int cf,i,j,m,n,c,o,sum;
+	scanf("%d",&n);//no of floor requests
+	int p[10000],q[10000];
+	scanf("%d",&cf);//cf=current floor
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&p[i]);//floor no request 
+		
+	}
+	sort(p,p+n);
+	sum=0;
+	sum=2*p[n-1]-cf-p[0];
+	for(j=0;j<n;j++)//normal mode
+	{
+		if(p[j]==cf)
+		{
+			m=0;
+			o=j;
+			q[m]=p[o];
+			m++;
+			o++;
+			while(o!=j)
+			{
+			 q[m]=p[o];
+			 m++;
+			 o++;
+			 if(o==n)
+			 {
+			 	o=0;
+			 }
+		   }
+		}
+	}
+	for(c=0;c<n;c++)
+	{
+		printf("%d ",q[c]);
+	}
+	printf("\n%d",sum);
+}
